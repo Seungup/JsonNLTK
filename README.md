@@ -45,15 +45,15 @@ $ python main.py hello
               "every morning they exchanged polite hellos"
           ]
         }
-    },
-    "Synonyms": [
+   },
+   "Synonyms": [
         "hullo",
         "howdy",
         "hi",
         "how-do-you-do",
         "hello"
-    ],
-    "Antonyms": []
+   ],
+   "Antonyms": []
 }
 ```
 
