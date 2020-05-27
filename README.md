@@ -1,4 +1,4 @@
-## NLTK Result -> Json format
+## NLTK Result -> json format
 
 #### pip install nltk
 
