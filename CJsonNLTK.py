@@ -61,9 +61,6 @@ class CJsonNLTK:
         with open(f'./{file_name}.json', 'w') as f:
             json.dump(self.dictionary, f)
 
-        # 저장 완료 신호
-        print(1)
-
     def pprint2Json(self) -> None:
         """
         dictionary 형식을 json 형식으로 출력합니다. (개행 있음)
