@@ -1,12 +1,13 @@
-## NLTK Result -> Json format
+## NLTK Result -> json format
 
-#### pip install nltk
+### Req
+```bash
+pip install nltk
+```
 
-TODO:
+### TODO:
 ```bash
 $ python
-```
-```python
 >> import nltk
 >> nltk.download()
 ```
@@ -18,7 +19,8 @@ $ python main.py {word} {argv}
 
 ### argv
 
-      -p 
+      -p=True
+      -p=False
       Default: True
       Exp : Show the Json format in the consol line
       
@@ -42,15 +44,15 @@ $ python main.py hello
               "every morning they exchanged polite hellos"
           ]
         }
-    },
-    "Synonyms": [
+   },
+   "Synonyms": [
         "hullo",
         "howdy",
         "hi",
         "how-do-you-do",
         "hello"
-    ],
-    "Antonyms": []
+   ],
+   "Antonyms": []
 }
 ```
 
