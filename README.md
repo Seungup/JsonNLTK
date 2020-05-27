@@ -1,8 +1,11 @@
 ## NLTK Result -> json format
 
-#### pip install nltk
+### Req
+```bash
+pip install nltk
+```
 
-TODO:
+### TODO:
 ```bash
 $ python
 ```
