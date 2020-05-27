@@ -19,7 +19,8 @@ $ python main.py {word} {argv}
 
 ### argv
 
-      -p 
+      -p=True
+      -p=False
       Default: True
       Exp : Show the Json format in the consol line
       
