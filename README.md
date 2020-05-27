@@ -8,8 +8,6 @@ pip install nltk
 ### TODO:
 ```bash
 $ python
-```
-```python
 >> import nltk
 >> nltk.download()
 ```
