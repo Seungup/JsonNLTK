@@ -4,11 +4,11 @@
 import nltk
 import json
 
+
 class CJsonNLTK:
     def __init__(self, target: str):
         self.target = target
-        self.dictionary = {}
-        self.dictionary['Target'] = self.target
+        self.dictionary = {'Target': self.target}
 
     def setDefinition(self) -> None:
         """
@@ -36,10 +36,10 @@ class CJsonNLTK:
         synonyms = []
         antonyms = []
         for syn in nltk.corpus.wordnet.synsets(self.target):
-            for l in syn.lemmas():
-                synonyms.append(l.name())
-                if l.antonyms():
-                    antonyms.append(l.antonyms()[0].name())
+            for lemma in syn.lemmas():
+                synonyms.append(lemma.name())
+                if lemma.antonyms():
+                    antonyms.append(lemma.antonyms()[0].name())
 
         # 중복 제거
         self.dictionary['Synonyms'] = list(set(synonyms))
