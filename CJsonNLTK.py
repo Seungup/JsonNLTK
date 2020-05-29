@@ -5,6 +5,7 @@ import nltk
 import json
 import requests
 
+
 class CJsonNLTK:
     def __init__(self, target: str):
         self.target = target
@@ -45,12 +46,6 @@ class CJsonNLTK:
         self.dictionary['Synonyms'] = list(set(synonyms))
         self.dictionary['Antonyms'] = list(set(antonyms))
 
-    def getDictionary(self) -> dict:
-        """
-        현재 딕셔너리를 반환합니다.
-        :return: self.dictionary
-        """
-        return self.dictionary
 
     def save2Json(self, file_name: str) -> None:
         """
@@ -60,13 +55,6 @@ class CJsonNLTK:
         """
         with open(f'./{file_name}.json', 'w') as f:
             json.dump(self.dictionary, f)
-
-    def pprint2Json(self) -> None:
-        """
-        dictionary 형식을 json 형식으로 출력합니다. (개행 있음)
-        :return: none
-        """
-        print(json.dumps(self.dictionary, sort_keys=True, indent=4, separators=(',', ': ')))
 
     def print2Json(self) -> None:
         """
