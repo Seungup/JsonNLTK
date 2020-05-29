@@ -2,7 +2,8 @@
 
 ### Req
 ```bash
-pip install nltk
+nltk
+requests
 ```
 
 ### TODO:
@@ -19,54 +20,16 @@ $ python main.py {word} {argv}
 
 ### argv
 
-      -p=True
-      -p=False
+      -print=True
+      -print=False
       Default: True
       Exp : Show the Json format in the consol line
       
-      -s={json_file_name}
+      -save={json_file_name}
       Default: False
       Exp : Save to the Json format in main.py folder
       
+      -post={http://link_here}
+      Default: False
+      Exp : Post the json th link
       
-      
-### example 
-```bash
-$ python main.py hello
-
-{
-  "Target": "hello",
-  "Synsets": {
-      "1": {
-          "definition": "an expression of greeting",
-          "pos": "n",
-          "examples": [
-              "every morning they exchanged polite hellos"
-          ]
-        }
-   },
-   "Synonyms": [
-        "hullo",
-        "howdy",
-        "hi",
-        "how-do-you-do",
-        "hello"
-   ],
-   "Antonyms": []
-}
-```
-
-```bash
-$ ls
-
-  main.py
-  CJsonNLTK.py
-  
-$ python main.py hello -s=json_file_name
-
-$ ls
-  
-  main.py
-  CJsonNLTK.py
-  json_file_name.json
-```
