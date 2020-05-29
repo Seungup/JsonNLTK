@@ -19,11 +19,9 @@ $ python main.py {word} {argv}
 ```
 
 ### argv
-
-      -print=True
-      -print=False
-      Default: True
-      Exp : Show the Json format in the consol line
+      
+      no argv
+      print the Json
       
       -save={json_file_name}
       Default: False
