@@ -3,7 +3,7 @@
 """
 import nltk
 import json
-
+import requests
 
 class CJsonNLTK:
     def __init__(self, target: str):
@@ -74,3 +74,15 @@ class CJsonNLTK:
         :return:
         """
         print(json.dumps(self.dictionary))
+
+    def postJson(self, url: str) -> None:
+        """
+        해당 url로 json을 post하고 요청 응답을 콘솔에 출력합니다.
+        :param url: target url
+        :return: none
+        """
+
+        data=json.dumps(self.dictionary)
+
+        req = requests.post(url=url, data=data)
+        print(req.status_code)
