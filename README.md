@@ -17,6 +17,14 @@ $ python
 ```bash
 $ python main.py {word} {argv}
 ```
+## Json Format
+```java
+"target" : String
+"synsets" : map
+"synonyms" : String[]
+"antonyms" : String[]
+```
+
 
 ### argv
       
