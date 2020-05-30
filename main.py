@@ -24,6 +24,6 @@ if __name__ == '__main__':
         exit(1)
 
     if args.print:
-        jnltk.pint2Json()
+        jnltk.print2Json()
         exit(1)
 

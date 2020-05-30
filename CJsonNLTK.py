@@ -9,25 +9,25 @@ import requests
 class CJsonNLTK:
     def __init__(self, target: str):
         self.target = target
-        self.dictionary = {'Target': self.target}
+        self.dictionary = {'target': self.target}
 
     def setDefinition(self) -> None:
         """
         정의, 단어의 성분, 예제를 추가합니다.
         :return:
         """
-        self.dictionary['Synsets'] = {}
+        self.dictionary['synsets'] = {}
         i = 0
         for synset in nltk.corpus.wordnet.synsets(self.target):
             i += 1
-            self.dictionary['Synsets'][i] = {}
-            self.dictionary['Synsets'][i]['definition'] = synset.definition()
-            self.dictionary['Synsets'][i]['pos'] = synset.pos()
-            self.dictionary['Synsets'][i]['examples'] = []
+            self.dictionary['synsets'][i] = {}
+            self.dictionary['synsets'][i]['definition'] = synset.definition()
+            self.dictionary['synsets'][i]['pos'] = synset.pos()
+            self.dictionary['synsets'][i]['examples'] = []
             examples = []
             for e in synset.examples():
                 examples.append(e)
-            self.dictionary['Synsets'][i]['examples'] = list(set(examples))
+            self.dictionary['synsets'][i]['examples'] = list(set(examples))
 
     def setSynonymsAntonyms(self) -> None:
         """
@@ -43,9 +43,8 @@ class CJsonNLTK:
                     antonyms.append(lemma.antonyms()[0].name())
 
         # 중복 제거
-        self.dictionary['Synonyms'] = list(set(synonyms))
-        self.dictionary['Antonyms'] = list(set(antonyms))
-
+        self.dictionary['synonyms'] = list(set(synonyms))
+        self.dictionary['antonyms'] = list(set(antonyms))
 
     def save2Json(self, file_name: str) -> None:
         """
@@ -69,8 +68,5 @@ class CJsonNLTK:
         :param url: target url
         :return: none
         """
-
-        data=json.dumps(self.dictionary)
-
-        req = requests.post(url=url, data=data)
+        req = requests.post(url=url, json=self.dictionary)
         print(req.status_code)
